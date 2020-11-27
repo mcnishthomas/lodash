@@ -48,6 +48,16 @@ const _ = {
   words(string) {
     return string.split(" ");
   },
+
+  pad(string, padding) {
+    debugger;
+    let totalPadding = padding - string.length;
+    let frontPad = Math.floor(totalPadding / 2);
+    let backPad = Math.ceil(totalPadding / 2);
+
+
+    return string.padStart(totalPadding, ' ');
+  },
 };
 
 // Do not write or modify code below this line.
