@@ -18,27 +18,12 @@ const _ = {
       end = temp;
 
       start = 0;
-
-      if (currentVal < start) {
-        return false;
-      } else if (currentVal > end) {
-        return false;
-      } else if (currentVal > start && currentVal < end) {
-        return true;
-      }
     }
 
     if (start > end) {
       temp = start;
       start = end;
       end = temp;
-      if (currentVal < start) {
-        return false;
-      } else if (currentVal > end) {
-        return false;
-      } else if (currentVal > start && currentVal < end) {
-        return true;
-      }
     }
 
     if (typeof end !== "undefined") {
