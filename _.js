@@ -10,11 +10,14 @@ const _ = {
   },
 
   inRange(currentVal, start, end) {
-    let arr = [currentVal, start, end];
-
     if (typeof end === "undefined") {
-      let end = arr[1];
-      let start = 0;
+      let temp;
+
+      temp = start;
+      start = end;
+      end = temp;
+
+      start = 0;
 
       if (currentVal < start) {
         return false;
@@ -26,9 +29,9 @@ const _ = {
     }
 
     if (start > end) {
-      let start = arr[2];
-      let end = arr[1];
-
+      temp = start;
+      start = end;
+      end = temp;
       if (currentVal < start) {
         return false;
       } else if (currentVal > end) {
