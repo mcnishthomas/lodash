@@ -10,15 +10,32 @@ const _ = {
   },
 
   inRange(currentVal, start, end) {
+    let arr = [currentVal, start, end];
+
     if (typeof end === "undefined") {
+      let end = arr[1];
+      let start = 0;
+
+      if (currentVal < start) {
+        return false;
+      } else if (currentVal > end) {
+        return false;
+      } else if (currentVal > start && currentVal < end) {
+        return true;
+      }
     }
 
-    if (currentVal === start) {
-      return true;
-    }
+    if (start > end) {
+      let start = arr[2];
+      let end = arr[1];
 
-    if (currentVal == end) {
-      return false;
+      if (currentVal < start) {
+        return false;
+      } else if (currentVal > end) {
+        return false;
+      } else if (currentVal > start && currentVal < end) {
+        return true;
+      }
     }
 
     if (typeof end !== "undefined") {
@@ -29,6 +46,14 @@ const _ = {
       } else if (currentVal > start && currentVal < end) {
         return true;
       }
+    }
+
+    if (currentVal === start) {
+      return true;
+    }
+
+    if (currentVal == end) {
+      return false;
     }
   },
 };
