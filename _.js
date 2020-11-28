@@ -60,8 +60,26 @@ const _ = {
     const paddedString = ' '.repeat(startPaddingLength) + string + ' '.repeat(endPaddingLength);
 
     return paddedString;
+  },
+
+  has(object, key) {
+    const hasValue = object[key];
+    if (hasValue !== undefined) {
+      return true;
+    } else {
+      return false;
+    }
   }
 };
+
+
+
+const car = {
+  make: 'toyota',
+  model: 'camry',
+  year: 2014
+}
+
 
 // Do not write or modify code below this line.
 module.exports = _;
