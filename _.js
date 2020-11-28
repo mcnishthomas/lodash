@@ -49,15 +49,18 @@ const _ = {
     return string.split(" ");
   },
 
-  pad(string, padding) {
+  pad(string, length) {
     debugger;
-    let totalPadding = padding - string.length;
-    let frontPad = Math.floor(totalPadding / 2);
-    let backPad = Math.ceil(totalPadding / 2);
+    if (string.length >= length) {
+      return string;
+    }
 
+    const startPaddingLength = Math.floor((length - string.length) / 2);
+    const endPaddingLength = length - string.length - startPaddingLength;
+    const paddedString = ' '.repeat(startPaddingLength) + string + ' '.repeat(endPaddingLength);
 
-    return string.padStart(totalPadding, ' ');
-  },
+    return paddedString;
+  }
 };
 
 // Do not write or modify code below this line.
