@@ -69,16 +69,19 @@ const _ = {
     } else {
       return false;
     }
+  },
+
+  invert(object) {
+    let invertedObject = {};
+
+    for (let key in object) {
+      const originalValue = object[key];
+      invertedObject = { originalValue: key };
+    }
+
+    return invertedObject;
   }
 };
-
-
-
-const car = {
-  make: 'toyota',
-  model: 'camry',
-  year: 2014
-}
 
 
 // Do not write or modify code below this line.
